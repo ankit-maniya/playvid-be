@@ -22,4 +22,5 @@ urlpatterns = [
     path('music/facebook/', MusicApiView.get_facebook_videos, name="facebook"),
     path('music/bandcamp/', MusicApiView.get_bandcamp_videos, name="bandcamp"),
     path('music/moj/', MusicApiView.get_moj_videos, name="moj"),
+    path('music/chingari/', MusicApiView.get_chingari_videos, name="chingari"),
 ]

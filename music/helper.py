@@ -2,6 +2,17 @@ import os
 import json
 
 
+def fetch_platform_data(url, load_json):
+    # Run Cli Cmd for Get Facebook data
+    command = f'youtube-dl "{url}" -j'
+    output = os.popen(command).read()
+
+    if load_json:
+        output = json.loads(output)
+
+    return output
+
+
 def extrect_formate_data(formate_data):
     url = formate_data["url"]
     format = formate_data["format"]
@@ -80,22 +91,34 @@ def extract_facebook_video_data_from_url(video_data):
     }
 
 
-def extract_moj_video_data_from_url(formate_data):
-    url = formate_data["url"]
-    format = formate_data["format"]
-    ext = formate_data["ext"]
-
-    orignal_formate = ["video"]
+def extract_moj_video_data(formate_data):
     filesize = 0
     if (formate_data.get("filesize")):
         filesize = formate_data["filesize"] / 1000000
 
     return {
-        "url": url,
-        "ext": ext,
-        "orignal_formate": orignal_formate,
         "filesize": filesize,
-        "format": format
+        "url": formate_data["url"],
+        "ext":  formate_data["ext"],
+        "orignal_formate": ["video"],
+        "format": formate_data["format"]
+    }
+
+
+def extract_chingari_video_data(formate_data):
+    filesize = 0
+    if (formate_data.get("filesize")):
+        filesize = formate_data["filesize"] / 1000000
+
+    return {
+        "title": formate_data["title"],
+        "description": formate_data["description"],
+        "orignal_formate": ["video"],
+        "filesize": filesize,
+        "url": formate_data["url"],
+        "ext": formate_data["ext"],
+        "upload_date": formate_data["upload_date"],
+        "thumbnail": formate_data["thumbnail"]
     }
 
 
