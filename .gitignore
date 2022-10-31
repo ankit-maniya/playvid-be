@@ -6,9 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+# Cmd Runner
+*.ipynb
+
 # Distribution / packaging
 .Python
 build/
+utils/
 develop-eggs/
 dist/
 downloads/
