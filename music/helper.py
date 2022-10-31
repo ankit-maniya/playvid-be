@@ -80,6 +80,25 @@ def extract_facebook_video_data_from_url(video_data):
     }
 
 
+def extract_moj_video_data_from_url(formate_data):
+    url = formate_data["url"]
+    format = formate_data["format"]
+    ext = formate_data["ext"]
+
+    orignal_formate = ["video"]
+    filesize = 0
+    if (formate_data.get("filesize")):
+        filesize = formate_data["filesize"] / 1000000
+
+    return {
+        "url": url,
+        "ext": ext,
+        "orignal_formate": orignal_formate,
+        "filesize": filesize,
+        "format": format
+    }
+
+
 def extract_bandcamp_video_data_from_url(video_data):
     return {
         "id": video_data["id"],
