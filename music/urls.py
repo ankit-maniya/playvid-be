@@ -18,6 +18,7 @@ from django.urls import path
 from .views import MusicApiView
 
 urlpatterns = [
+    path('test/', MusicApiView.as_view(), name='Test'),
     path('music/', MusicApiView.as_view(), name='Music'),
     path('music/facebook/', MusicApiView.get_facebook_videos, name="facebook"),
     path('music/bandcamp/', MusicApiView.get_bandcamp_videos, name="bandcamp"),

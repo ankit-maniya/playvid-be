@@ -35,6 +35,12 @@ class MusicApiView(APIView):
             return Response({"thumbnail": thumbnail, "title": title, **iRes})
         return Response({"msg": "Please Provide Link"})
 
+    def get(self, request, format=None):
+        """
+        Return a test message.
+        """
+        return Response({"Test": "Api Working Fine!"})
+
     @api_view(['post'])
     def get_facebook_videos(request, format=None):
         """
