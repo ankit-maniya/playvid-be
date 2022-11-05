@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "playvid-be.herokuapp.com"]
+ALLOWED_HOSTS = ["localhost", "playvid-be.herokuapp.com", "playvid-fe.vercel.app"]
 
 
 # Application definition
