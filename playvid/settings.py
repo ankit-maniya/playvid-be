@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://7793-103-251-19-200.in.ngrok.io", "7793-103-251-19-200.in.ngrok.io"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -135,5 +135,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://192.168.1.6:8000",
-    "https://09bc-103-251-19-200.in.ngrok.io",
+    "https://f8eb-103-251-19-200.in.ngrok.io"
 ]
