@@ -91,7 +91,7 @@ def extract_facebook_video_data_from_url(video_data):
     }
 
 
-def extract_moj_video_data(formate_data):
+def extract_all_type_video_data(formate_data):
     filesize = 0
     if (formate_data.get("filesize")):
         filesize = formate_data["filesize"] / 1000000
@@ -103,24 +103,6 @@ def extract_moj_video_data(formate_data):
         "orignal_formate": ["video"],
         "format": formate_data["format"]
     }
-
-
-def extract_chingari_video_data(formate_data):
-    filesize = 0
-    if (formate_data.get("filesize")):
-        filesize = formate_data["filesize"] / 1000000
-
-    return {
-        "title": formate_data["title"],
-        "description": formate_data["description"],
-        "orignal_formate": ["video"],
-        "filesize": filesize,
-        "url": formate_data["url"],
-        "ext": formate_data["ext"],
-        "upload_date": formate_data["upload_date"],
-        "thumbnail": formate_data["thumbnail"]
-    }
-
 
 def extract_bandcamp_video_data_from_url(video_data):
     return {

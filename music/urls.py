@@ -19,9 +19,10 @@ from .views import MusicApiView
 
 urlpatterns = [
     path('test/', MusicApiView.as_view(), name='Test'),
-    path('music/', MusicApiView.as_view(), name='Music'),
+    path('music/', MusicApiView.as_view(), name='youtube'),
     path('music/facebook/', MusicApiView.get_facebook_videos, name="facebook"),
     path('music/bandcamp/', MusicApiView.get_bandcamp_videos, name="bandcamp"),
-    path('music/moj/', MusicApiView.get_moj_videos, name="moj"),
-    path('music/chingari/', MusicApiView.get_chingari_videos, name="chingari"),
+    path('music/moj/', MusicApiView.get_all_type_videos, name="moj"),
+    path('music/chingari/', MusicApiView.get_all_type_videos, name="chingari"),
+    path('music/soundcloud/', MusicApiView.get_all_type_videos, name="soundcloud"),
 ]
