@@ -1,4 +1,5 @@
 import metadata_parser
+import ssl
 from pytube import YouTube
 
 from rest_framework.views import APIView
@@ -20,6 +21,7 @@ class MusicApiView(APIView):
         """
         Return a list of all youtube videos/audio.
         """
+        ssl._create_default_https_context = ssl._create_stdlib_context
         url = request.data.get("url")
         if url:
             yt = YouTube(url)
@@ -30,7 +32,6 @@ class MusicApiView(APIView):
 
             # Doownload Video From Youtube-DL #in this lib we can not get all list
             # video_data = fetch_platform_data(url, load_json=True)
-            # iRes = extract_video_data_from_url(video_data)
 
             return Response({"thumbnail": thumbnail, "title": title, **iRes})
         return Response({"msg": "Please Provide Link"})

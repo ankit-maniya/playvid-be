@@ -3,8 +3,8 @@ import json
 
 
 def fetch_platform_data(url, load_json):
-    # Run Cli Cmd for Get Facebook data
-    command = f'youtube-dl "{url}" -j'
+    # Run Cli Cmd for Get Facebook dat
+    command = f'youtube-dl "{url}" -j --no-check-certificate'
     output = os.popen(command).read()
 
     if load_json:
